@@ -31,7 +31,7 @@ public class UserController {
 	private UserService userService;
 	
 	/**
-	 * User login
+	 * User login API
 	 * 
 	 * @return
 	 */
