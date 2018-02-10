@@ -41,6 +41,20 @@ public interface ProductService {
 	public List<Product> fetchByNameContaining(String name);
 	
 	/**
+	 * Fetch all products by margin
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByMargin();
+	
+	/**
+	 * Fetch all products low stock
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByStock();
+	
+	/**
 	 * Import products from CSV file
 	 * 
 	 */

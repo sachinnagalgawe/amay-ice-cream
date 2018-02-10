@@ -71,4 +71,28 @@ public class ProductController {
 		List<Product> allProducts = productService.fetchByNameContaining(name);
 		return allProducts;
 	}
+	
+	/**
+	 * Get High marging products
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/margin", method = RequestMethod.GET)
+	public List<Product> getProductsByMargin() {
+		logger.info("Get Products by high margin:");
+		List<Product> allProducts = productService.fetchByMargin();
+		return allProducts;
+	}
+	
+	/**
+	 * Get low stock products
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/stock", method = RequestMethod.GET)
+	public List<Product> getProductsByStock() {
+		logger.info("Get Products by low stock:");
+		List<Product> allProducts = productService.fetchByStock();
+		return allProducts;
+	}
 }

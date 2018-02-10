@@ -82,7 +82,28 @@ public class ProductServiceImpl implements ProductService{
 		logger.info("Fetching products by name containing: "+name);
 		return productRepository.findByDescriptionContainingIgnoreCase(name);
 	}
+	
+	/**
+	 * Fetch all products by margin
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByMargin() {
+		logger.info("Get Products by high margin:");
+		return productRepository.findByOrderByRtlrMarginDesc();
+	}
 
+	/**
+	 * Fetch all products low stock
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByStock() {
+		logger.info("Get low stock products:");
+		return productRepository.findByOrderByStockStockRemainingAsc();
+		
+	}
+	
 	/**
 	 * Import products from CSV file 
 	 */

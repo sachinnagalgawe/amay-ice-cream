@@ -13,4 +13,8 @@ public interface ProductRepository extends MongoRepository<Product, Integer> {
 	public List <Product> findByBarcode(Double barcode);
 	
 	public List <Product> findByDescriptionContainingIgnoreCase(String name);
+	
+	public List <Product> findByOrderByRtlrMarginDesc();
+	
+	public List <Product> findByOrderByStockStockRemainingAsc();
 }
