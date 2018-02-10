@@ -34,7 +34,7 @@ public class Product {
 	// product priceToRtlr
 	private double priceToRtlr;
 	
-	private double stockRemaining;
+	private Stock stock;
 
 	// Getter and setter methods
 	public String getId() {
@@ -109,11 +109,11 @@ public class Product {
 		this.priceToRtlr = priceToRtlr;
 	}
 
-	public double getStockRemaining() {
-		return stockRemaining;
+	public Stock getStock() {
+		return stock;
 	}
 
-	public void setStockRemaining(double stockRemaining) {
-		this.stockRemaining = stockRemaining;
+	public void setStock(Stock stock) {
+		this.stock = stock;
 	}
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.parlor.amayicecream.model.Product;
+import com.parlor.amayicecream.model.Stock;
 import com.parlor.amayicecream.repository.ProductRepository;
 import com.parlor.amayicecream.service.ProductService;
 import org.apache.poi.ss.usermodel.*;
@@ -145,6 +146,8 @@ public class ProductServiceImpl implements ProductService{
 		Sheet firstSheet = workProduct.getSheetAt(0);
 		Iterator<Row> iterator = firstSheet.iterator();
 
+		Stock stock = new Stock();
+
 		int count = 0;
 
 		int productNumber = 0;
@@ -165,7 +168,7 @@ public class ProductServiceImpl implements ProductService{
 					switch (columnIndex) {
 					case 0:
 						Double barcode = (Double) getCellValue(nextCell);
-						System.out.println("barcode: "+barcode.toString());
+						//System.out.println("barcode: "+barcode.toString());
 						product.setBarcode(barcode);
 						break;
 					case 1:
@@ -194,6 +197,7 @@ public class ProductServiceImpl implements ProductService{
 				if(existingProduct == null) {
 					productNumber++;
 					product.setNumber(productNumber);
+					product.setStock(stock);
 					productRepository.save(product);
 				}else {
 					//product.setNumber(count);
