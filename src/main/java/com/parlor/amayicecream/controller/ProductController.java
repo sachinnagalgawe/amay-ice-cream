@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,6 +45,30 @@ public class ProductController {
 	public List<Product> getAllProducts() {
 		logger.info("Get all Products");
 		List<Product> allProducts = productService.fetchAll();
+		return allProducts;
+	}
+	
+	/**
+	 * Get Products by barcode
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/barcode/{barcode}", method = RequestMethod.GET)
+	public List<Product> getProductsByBarcode(@PathVariable Double barcode) {
+		logger.info("Get Products by barcode: "+barcode);
+		List<Product> allProducts = productService.fetchByBarcode(barcode);
+		return allProducts;
+	}
+	
+	/**
+	 * Get Products by name containing
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+	public List<Product> getProductsByNameContaining(@PathVariable String name) {
+		logger.info("Get Products by name containing: "+name);
+		List<Product> allProducts = productService.fetchByNameContaining(name);
 		return allProducts;
 	}
 }

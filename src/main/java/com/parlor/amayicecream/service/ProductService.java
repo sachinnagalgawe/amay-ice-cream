@@ -27,6 +27,20 @@ public interface ProductService {
 	public List<Product> fetchAll();
 	
 	/**
+	 * Fetch all products by barcode
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByBarcode(Double barcode);
+	
+	/**
+	 * Fetch all products by name containing
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByNameContaining(String name);
+	
+	/**
 	 * Import products from CSV file
 	 * 
 	 */

@@ -62,6 +62,26 @@ public class ProductServiceImpl implements ProductService{
 		logger.info("Fetching all products");
 		return productRepository.findAll();
 	}
+	
+	/**
+	 * Fetch all products by barcode
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByBarcode(Double barcode) {
+		logger.info("Fetching products by barcode: "+barcode);
+		return productRepository.findByBarcode(barcode);
+	}
+	
+	/**
+	 * Fetch all products by name containing
+	 * 
+	 * @return
+	 */
+	public List<Product> fetchByNameContaining(String name) {
+		logger.info("Fetching products by name containing: "+name);
+		return productRepository.findByDescriptionContainingIgnoreCase(name);
+	}
 
 	/**
 	 * Import products from CSV file 
