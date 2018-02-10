@@ -1,5 +1,6 @@
 package com.parlor.amayicecream.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.parlor.amayicecream.model.Product;
@@ -30,4 +31,9 @@ public interface ProductService {
 	 * 
 	 */
 	public void importFromCsv();
+	
+	/**
+	 * Import excel file
+	 */
+	public void readProductsFromExcelFile() throws IOException;
 }

@@ -1,5 +1,7 @@
 package com.parlor.amayicecream;
 
+import java.io.IOException;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ public class AmayicecreamApplicationTests {
 	}
 
 	@Test
-	public void test1() {
-		productService.importFromCsv();
+	public void test1() throws IOException {
+		productService.readProductsFromExcelFile();
 	}
 }

@@ -14,7 +14,7 @@ public class Product {
 	private int number;
 	
 	// product barcode
-	private String barcode;
+	private double barcode;
 	
 	// product group
 	private String group;
@@ -23,16 +23,18 @@ public class Product {
 	private String description;
 	
 	// product ea
-	private float ea;
+	private double ea;
 	
 	// product mrp
-	private float mrp;
+	private double mrp;
 	
 	// product rtlrMargin
-	private float rtlrMargin;
+	private double rtlrMargin;
 	
 	// product priceToRtlr
-	private float priceToRtlr;
+	private double priceToRtlr;
+	
+	private double stockRemaining;
 
 	// Getter and setter methods
 	public String getId() {
@@ -41,6 +43,22 @@ public class Product {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public double getBarcode() {
+		return barcode;
+	}
+
+	public void setBarcode(double barcode) {
+		this.barcode = barcode;
 	}
 
 	public String getGroup() {
@@ -59,58 +77,43 @@ public class Product {
 		this.description = description;
 	}
 
-	public float getEa() {
+	public double getEa() {
 		return ea;
 	}
 
-	public void setEa(float ea) {
+	public void setEa(double ea) {
 		this.ea = ea;
 	}
 
-	public int getNumber() {
-		return number;
-	}
-
-	public void setNumber(int number) {
-		this.number = number;
-	}
-
-	public float getMrp() {
+	public double getMrp() {
 		return mrp;
 	}
 
-	public String getBarcode() {
-		return barcode;
-	}
-
-	public void setBarcode(String barcode) {
-		this.barcode = barcode;
-	}
-
-	public void setMrp(float mrp) {
+	public void setMrp(double mrp) {
 		this.mrp = mrp;
 	}
 
-	public float getRtlrMargin() {
+	public double getRtlrMargin() {
 		return rtlrMargin;
 	}
 
-	public void setRtlrMargin(float rtlrMargin) {
+	public void setRtlrMargin(double rtlrMargin) {
 		this.rtlrMargin = rtlrMargin;
 	}
 
-	public float getPriceToRtlr() {
+	public double getPriceToRtlr() {
 		return priceToRtlr;
 	}
 
-	public void setPriceToRtlr(float priceToRtlr) {
+	public void setPriceToRtlr(double priceToRtlr) {
 		this.priceToRtlr = priceToRtlr;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", number=" + number + ", barcode=" + barcode + ", group=" + group
-				+ ", description=" + description + ", ea=" + ea + ", mrp=" + mrp + ", rtlrMargin=" + rtlrMargin
-				+ ", priceToRtlr=" + priceToRtlr + "]";
+	public double getStockRemaining() {
+		return stockRemaining;
+	}
+
+	public void setStockRemaining(double stockRemaining) {
+		this.stockRemaining = stockRemaining;
 	}
 }
