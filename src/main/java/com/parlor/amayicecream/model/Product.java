@@ -36,6 +36,8 @@ public class Product {
 	
 	private Stock stock;
 
+	private boolean runningProduct;
+	
 	// Getter and setter methods
 	public String getId() {
 		return id;
@@ -111,6 +113,14 @@ public class Product {
 
 	public Stock getStock() {
 		return stock;
+	}
+
+	public boolean isRunningProduct() {
+		return runningProduct;
+	}
+
+	public void setRunningProduct(boolean runningProduct) {
+		this.runningProduct = runningProduct;
 	}
 
 	public void setStock(Stock stock) {
